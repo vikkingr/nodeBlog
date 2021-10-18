@@ -1,4 +1,4 @@
-class CommentResponse{
+class CommentResponse {
     
     commentId: number = 0;
     comment: string = "";

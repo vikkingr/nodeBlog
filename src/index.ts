@@ -1,8 +1,9 @@
 import express from 'express';
 import path from 'path';
 import { usersRoute } from './routes/Users';
-import cors from 'cors';
 import { postsRoute } from './routes/Posts';
+import { commentsRoute } from './routes/Comments';
+import cors from 'cors';
 
 let app = express();
 
@@ -13,6 +14,7 @@ app.use(express.static(path.join(process.cwd(), 'views')));
 
 app.use('/Users', usersRoute);
 app.use('/Posts', postsRoute);
+app.use('/Comments', commentsRoute);
 
 app.use('/', (req, res, next) => {
 

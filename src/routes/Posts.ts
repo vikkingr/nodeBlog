@@ -221,4 +221,4 @@ postsRoute.delete('/:postId', (req, res, next) => {
 
 });
 
-export {postsRoute}
+export {postsRoute, arrPostResponse}
