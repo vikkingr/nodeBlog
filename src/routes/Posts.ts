@@ -1,7 +1,6 @@
 import express from 'express';
 import {ResponseMessage} from '../models/ResponseMessage';
 import jwt from 'jsonwebtoken';
-import bcrypt, { hash } from 'bcrypt';
 import cookieParser from 'cookie-parser';
 import { PostResponse } from '../models/PostResponse';
 import { PostRequest } from '../models/PostRequest';
