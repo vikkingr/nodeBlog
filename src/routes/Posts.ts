@@ -57,7 +57,7 @@ postsRoute.post('/', (req, res, next) => {
         let postRes: PostResponse = new PostResponse();
         postRes = Object.assign(postRes, postReq);
         postRes.userId = decodedToken.toString();
-        postRes.postId = arrPostResponse.length + 1;
+        postRes.postId = arrPostResponse.length;
         postRes.createdDate = new Date().toDateString();
         postRes.lastUpdated = new Date().toDateString();
         
