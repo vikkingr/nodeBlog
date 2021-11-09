@@ -8,7 +8,7 @@ import cors from 'cors';
 let app = express();
 
 app.use(express.json());
-app.use(cors({credentials: true, origin: true}));
+app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 
 app.use(express.static(path.join(process.cwd(), 'views')));
 

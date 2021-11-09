@@ -23,7 +23,8 @@ usersRoute.get('/', (req, res, next) => {
     if (authHeader) {
 
         let authToken = authHeader.split(' ')[1];
-
+        authToken = JSON.parse(authToken).token;
+        
         try {
 
             let decodedToken = jwt.verify(authToken, SECRET_TOKEN);
@@ -63,6 +64,7 @@ usersRoute.get('/:userId', (req, res, next) => {
     if (authHeader) {
 
         let authToken = authHeader.split(' ')[1];
+        authToken = JSON.parse(authToken).token;
 
         try {
 
@@ -117,10 +119,9 @@ usersRoute.get('/:userId/:password', (req, res, next) => {
 
             if (result == true) {
 
-                let myToken = jwt.sign(user!.userId, SECRET_TOKEN);
+                let myToken = jwt.sign({'userId':user!.userId}, SECRET_TOKEN);
 
                 res.status(200);
-                res.setHeader('Authorization', 'Bearer ' + myToken);
                 res.send({token: myToken});
 
                 return;
@@ -235,7 +236,7 @@ usersRoute.post('/', (req, res, next) => {
         });
 
     });
-  
+
     res.status(201);
     res.send(newUserCopy);
   
@@ -247,7 +248,8 @@ usersRoute.patch('/:userId', (req, res, next) => {
   
     if (authHeader) {
 
-        let authToken = authHeader.split(' ')[1];
+        let authToken = authHeader.split(' ')[1];    
+        authToken = JSON.parse(authToken).token;
 
         try {
 
@@ -369,6 +371,7 @@ usersRoute.delete('/:userId', (req, res, next) => {
     if (authHeader) {
 
         let authToken = authHeader.split(' ')[1];
+        authToken = JSON.parse(authToken).token;
 
         try {
 

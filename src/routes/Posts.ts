@@ -47,16 +47,17 @@ postsRoute.post('/', (req, res, next) => {
     }
 
     let authToken = authHeader.split(' ')[1];
+    authToken = JSON.parse(authToken).token;
 
     try {
 
-        let decodedToken = jwt.verify(authToken, SECRET_TOKEN);
+        let decodedToken: any = jwt.verify(authToken, SECRET_TOKEN);
 
         let postReq: PostRequest = req.body;
 
         let postRes: PostResponse = new PostResponse();
         postRes = Object.assign(postRes, postReq);
-        postRes.userId = decodedToken.toString();
+        postRes.userId = decodedToken.userId;
         postRes.postId = arrPostResponse.length;
         postRes.createdDate = new Date().toDateString();
         postRes.lastUpdated = new Date().toDateString();
@@ -125,6 +126,7 @@ postsRoute.patch('/:postId', (req, res, next) => {
     }
 
     let authToken = authHeader.split(' ')[1];
+    authToken = JSON.parse(authToken).token;
 
     try {
 
@@ -183,6 +185,7 @@ postsRoute.delete('/:postId', (req, res, next) => {
     }
 
     let authToken = authHeader.split(' ')[1];
+    authToken = JSON.parse(authToken).token;
 
     try {
 
