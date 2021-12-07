@@ -1,0 +1,27 @@
+{
+  "name": "assignment-3-vikkingr",
+  "version": "1.0.0",
+  "description": "trying to make a package json",
+  "main": "dist/index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UNF-Web-Frameworks/assignment-3-vikkingr.git"
+  },
+  "author": "Robert Veinberg-Vikking (N01441484)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UNF-Web-Frameworks/assignment-3-vikkingr/issues"
+  },
+  "homepage": "https://github.com/UNF-Web-Frameworks/assignment-3-vikkingr#readme"
+}
